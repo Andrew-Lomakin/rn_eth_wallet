@@ -26,8 +26,8 @@ const Settings = ({ quit, navigation }: Props) => {
     Linking.openURL('mailto:alomakin@sfxdx.ru?subject=MobileApp');
   };
   const handleContactTelegram = () => {
-    Linking.openURL('tg://resolve?domain=andrew_lomakin').catch(() => {
-      Clipboard.setString('@andrew_lomakin');
+    Linking.openURL('tg://resolve?domain=found_null').catch(() => {
+      Clipboard.setString('@found_null');
       Toast.show('Telegram username copied to clipboard', {
         duration: Toast.durations.SHORT,
         position: Toast.positions.TOP,

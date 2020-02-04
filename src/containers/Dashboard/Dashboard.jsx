@@ -17,7 +17,7 @@ type Props = {
   address: string,
   balance: string,
   path: string,
-  getBalance: ({address: string})=> void,
+  getBalance: ({ address: string }) => void,
   changePatch: (path: string) => void,
   navigation: {
     openDrawer: () => void
@@ -50,14 +50,25 @@ const Dashboard = ({
   const handleMenu = () => {
     navigation.openDrawer();
   };
+  const hitSlop = {
+    top: 40, left: 40, bottom: 40, right: 40,
+  };
   return (
     <>
       <View style={styles.header}>
         <View style={styles.row}>
-          <TouchableOpacity style={styles.drawer} onPress={handleMenu}>
+          <TouchableOpacity
+            style={styles.drawer}
+            onPress={handleMenu}
+            hitSlop={hitSlop}
+          >
             <Text style={styles.menu}>&#9776;</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.pathBlock} onPress={handleOpenChangePath}>
+          <TouchableOpacity
+            style={styles.pathBlock}
+            onPress={handleOpenChangePath}
+            hitSlop={hitSlop}
+          >
             <Text style={styles.path}>{`Path: ${path}  `}</Text>
             <Text style={styles.changePath}>change</Text>
           </TouchableOpacity>
