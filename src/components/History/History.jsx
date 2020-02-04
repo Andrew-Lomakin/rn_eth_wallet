@@ -28,31 +28,31 @@ const History = ({ history, address }: Props) => {
     item: {
       to, amount, transactionHash, date,
     },
-  }: {item: ItemT}) => (
-    <View style={styles.item}>
-      <Text style={styles.label} numberOfLines={1} ellipsizeMode="middle">
-        To:
+  }: { item: ItemT }) => (
+      <View style={styles.item}>
+        <Text style={styles.label} numberOfLines={1} ellipsizeMode="middle">
+          To:
         <Text style={styles.text} numberOfLines={1} ellipsizeMode="middle">
-          {` ${to}`}
+            {` ${to}`}
+          </Text>
         </Text>
-      </Text>
-      <Text style={styles.label}>
-        Amount:
+        <Text style={styles.label}>
+          Amount:
         <Text style={styles.text}>
-          {` ${amount}`}
+            {` ${amount}`}
+          </Text>
         </Text>
-      </Text>
-      <Text>{date && dayjs(date).format('hh:mm DD/MM/YYYY')}</Text>
-      <Button
-        style={styles.button}
-        styleText={styles.buttonText}
-        onPress={() => handleLink(transactionHash)}
-        secondary
-      >
-        look at etherscan.io
+        <Text>{date && dayjs(date).format('hh:mm DD/MM/YYYY')}</Text>
+        <Button
+          style={styles.button}
+          styleText={styles.buttonText}
+          onPress={() => handleLink(transactionHash)}
+          secondary
+        >
+          look at etherscan.io
       </Button>
-    </View>
-  );
+      </View>
+    );
 
   return (
     <View style={styles.container}>
@@ -61,7 +61,7 @@ const History = ({ history, address }: Props) => {
         onPress={handleOpenWeb}
         secondary
       >
-        open all history on website
+        open all history on etherscan.io
       </Button>
       <FlatList
         data={history}
